@@ -1,5 +1,6 @@
 name: YouTube去广告
 desc: 无需会员，支持后台小窗播放
+category: 去广告
 http:
   mitm:
     - "-redirector*.googlevideo.com"
