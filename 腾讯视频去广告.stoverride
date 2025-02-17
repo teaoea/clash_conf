@@ -1,0 +1,32 @@
+name: 腾讯视频去广告
+desc: 广告屏蔽
+rules:
+  - DOMAIN,adsmind.gdtimg.com,REJECT
+  - DOMAIN,info4.video.qq.com,REJECT
+  - DOMAIN,info6.video.qq.com,REJECT
+  - DOMAIN,ios.video.mpush.qq.com,REJECT
+  - DOMAIN,otheve.beacon.qq.com,REJECT
+  - DOMAIN,pgdt.gtimg.cn,REJECT
+  - DOMAIN,tpns.qq.com,REJECT
+  - DOMAIN,vv6.video.qq.com,REJECT
+  - DOMAIN-SUFFIX,gdt.qq.com,REJECT
+  - DOMAIN-SUFFIX,l.qq.com,REJECT
+  - DOMAIN-KEYWORD,trace.qq.com,REJECT
+  - DOMAIN-KEYWORD,trace.video.qq.com,REJECT
+  - IP-CIDR,47.110.187.87/32,REJECT,no-resolve
+http:
+  url-rewrite:
+    - ^http:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+ - reject
+    - ^http:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+ - reject
+    - ^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ - reject
+    - ^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind - reject-dict
+  script:
+    - match: ^https?:\/\/vv\.video\.qq\.com\/getvinfo
+      name: replace-body_28
+      type: request
+      require-body: true
+      argument: '"'
+script-providers:
+  replace-body_28:
+    url: https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/CommonScript/replace-body.js
+    interval: 86400
