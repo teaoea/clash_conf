@@ -1,0 +1,17 @@
+name: 爱优腾去广告
+desc: 一款去广告的脚本
+
+mixin:  
+  hosts:
+    "ad.tencentyun.com": 127.0.0.1
+    "ad.youku.com": 127.0.0.1
+    "ad.iqiyi.com": 127.0.0.1
+
+  rules:
+    - DOMAIN-SUFFIX,ad.tencentyun.com,REJECT
+    - DOMAIN-SUFFIX,ad.youku.com,REJECT
+    - DOMAIN-SUFFIX,ad.iqiyi.com,REJECT
+
+  payload:
+    - DOMAIN-SUFFIX,cm.video.qq.com,REJECT
+    - DOMAIN-SUFFIX,v.smtcdns.com,REJECT
