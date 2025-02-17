@@ -1,5 +1,6 @@
 name: 禁用app开屏广告加强版
 desc: 禁用app开屏广告加强版
+category: 去广告
 http:
   mitm:
     - "*-release.wuta-cam.com"

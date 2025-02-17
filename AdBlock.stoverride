@@ -1,5 +1,6 @@
-name: 广告屏蔽
+name: 通用去广告
 desc: 广告屏蔽
+category: 去广告
 http:
   mitm:
     - "api.21jingji.com"

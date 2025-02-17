@@ -1,5 +1,6 @@
 name: 腾讯视频去广告
 desc: 广告屏蔽
+category: 去广告
 rules:
   - DOMAIN,adsmind.gdtimg.com,REJECT
   - DOMAIN,info4.video.qq.com,REJECT

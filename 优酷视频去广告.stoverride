@@ -1,5 +1,6 @@
 name: 优酷视频去广告
 desc: 广告屏蔽
+category: 去广告
 rules:
   # 放行地址
   - DOMAIN,push.m.youku.com,DIRECT
